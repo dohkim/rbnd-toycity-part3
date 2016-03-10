@@ -41,4 +41,7 @@ class Product
 		stock = @@products.select {|product| product.stock > 0}		
 	end
 
+	private
+	def sell
+	end
 end
