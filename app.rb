@@ -65,3 +65,14 @@ puts transaction2.product == nanoblock # Should return true
 
 # walter.purchase(firehouse)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+
+puts "*******************New Feature*******************"
+puts nanoblock.stock 
+walter.purchases #show all purchases
+juli=Customer.find_by_name("Julia Van Cleve")
+juli.purchase(nanoblock)
+juli.purchases
+walter.return_item(transaction2)
+puts nanoblock.stock 
+walter.purchases 

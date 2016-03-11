@@ -20,6 +20,20 @@ class Customer
 		Transaction.new(self, product)		
 	end
 
+	def return_item(transaction)
+		transaction.cancel(self)		
+	end
+
+	def purchases
+		purchases = Transaction.find_by_customer(self)
+		puts "Transaction ID\t Product"
+		purchases.each {|purchase| puts "#{purchase.id}\t\t #{purchase.product.title}"}
+	end
+
+
+
+	
+
 	def self.all
 		@@customers
 	end

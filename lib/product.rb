@@ -21,12 +21,16 @@ class Product
 		@stock != 0
 	end
 
-	def purchased
+	def out
 		if stock <= 0
 			raise OutOfStockError, "#{@title} is out of stock."
 		else
 			@stock -= 1
 		end
+	end
+
+	def in
+		@stock += 1
 	end
 
 

@@ -6,3 +6,6 @@ end
 
 class OutOfStockError < StandardError
 end
+
+class NotauthorizeError < StandardError
+end
