@@ -24,6 +24,7 @@ class Customer
 		transaction.cancel(self)		
 	end
 
+	#display all purchases.
 	def purchases
 		purchases = Transaction.find_by_customer(self)
 		puts "Transaction ID\t Product"

@@ -1,0 +1,8 @@
+1. How long did you spend working on this project?
+	It's been around 2~3 hours.
+2. What was the most rewarding challenge you conquered?
+	returning item was little bit challenged, in my case, to return the item transaction should be canceled
+3. What two additional features did you build? Why?
+	Return item, transaction cancel(delete), check if customer are same beetween transaction and customer who trying to cancel
+4. Where do you still have room to grow?
+	Stock history and customer able to set quantity.

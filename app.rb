@@ -67,12 +67,16 @@ puts transaction2.product == nanoblock # Should return true
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
 
 
+#Test for new feature
+=begin
+
 puts "*******************New Feature*******************"
-puts nanoblock.stock 
-walter.purchases #show all purchases
+walter.purchases #show all purchases #display all purchases speicific user
 juli=Customer.find_by_name("Julia Van Cleve")
 juli.purchase(nanoblock)
 juli.purchases
-walter.return_item(transaction2)
+walter.return_item(transaction2)  #return item, delete transaction and add item
 puts nanoblock.stock 
-walter.purchases 
+walter.purchases #check that transaction was deleted.
+
+=end

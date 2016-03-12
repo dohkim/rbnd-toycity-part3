@@ -9,9 +9,9 @@ class Transaction
 	end
 
 	def cancel(customer)
-		check_customer(customer)
-		@product.in
-		delete_transaction		 
+		check_customer(customer)	#check if it is same customer between transaction and customer
+		@product.in 				#add item from returning
+		delete_transaction		    #transaction delete
 	end
 
 
@@ -27,6 +27,7 @@ class Transaction
 	end
 
 	def check_customer(customer)		
+		#Customer only able to delete their transaction.
 		if customer != self.customer
 			raise NotauthorizeError, "#{self.customer.name} is not able to return item of #{customer.name}'s"
 		end
@@ -46,7 +47,7 @@ class Transaction
 		@@transactions.select {|transaction| transaction.customer == customer}
 	end
 
-	private
+	private	
 	def delete_transaction
 		@@transactions.delete(self)
 	end
