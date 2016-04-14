@@ -1,23 +1,27 @@
 class Transaction
-	attr_reader :product, :customer, :id
+	attr_reader :product, :customer, :id, :return_item
 	@@count=0
 	@@transactions=[]
+	
+
 	def initialize(customer, product, options={})
 		@product = product
 		@customer = customer
+		@return_item=false
 		add_to_transaction		
 	end
 
 	def cancel(customer)
 		check_customer(customer)	#check if it is same customer between transaction and customer
 		@product.in 				#add item from returning
-		delete_transaction		    #transaction delete
+		@return_item = true
 	end
 
 
 	def add_to_transaction
 		@@count +=1
 		@id = @@count
+		@product.out
 		@@transactions << self
 	end
 	
@@ -45,11 +49,6 @@ class Transaction
 
 	def self.find_by_customer(customer)
 		@@transactions.select {|transaction| transaction.customer == customer}
-	end
-
-	private	
-	def delete_transaction
-		@@transactions.delete(self)
 	end
 
 end

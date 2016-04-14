@@ -27,8 +27,16 @@ class Customer
 	#display all purchases.
 	def purchases
 		purchases = Transaction.find_by_customer(self)
+		puts "#{self.name}'s purchases"
 		puts "Transaction ID\t Product"
-		purchases.each {|purchase| puts "#{purchase.id}\t\t #{purchase.product.title}"}
+		purchases.each do |purchase| 
+			print "#{purchase.id}\t\t #{purchase.product.title} "
+			if purchase.return_item
+				puts "(Return Item)"
+			else
+				puts ""
+			end
+		end
 	end
 
 

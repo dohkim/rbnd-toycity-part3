@@ -1,6 +1,5 @@
 class Product
 	attr_reader :title, :price, :stock
-
 	@@products = []
 
 	def initialize(options={})
@@ -49,9 +48,5 @@ class Product
 
 	def self.in_stock		
 		stock = @@products.select {|product| product.stock > 0}		
-	end
-
-	private
-	def sell
 	end
 end
